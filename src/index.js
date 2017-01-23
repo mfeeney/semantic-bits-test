@@ -11,11 +11,13 @@ import '../node_modules/toastr/build/toastr.min.css';
 
 /* Src Imports */
 import configureStore from './store/configureStore'; // eslint-disable-line import/default
+import {loadAdverseEffects} from './actions/adverseEffectsActions';
 import routes from './routes';
+ 
 
 
 const store = configureStore();
-
+store.dispatch(loadAdverseEffects());
 
 render(
     <Provider store={store}>
