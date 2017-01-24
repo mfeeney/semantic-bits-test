@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as adverseEffectsActions from '../../actions/adverseEffectsActions';
 import {browserHistory} from 'react-router';
+import * as adverseEffectsActions from '../../actions/adverseEffectsActions';
+import AdverseEffectsList from './AdverseEffectsList';
 
 class AdverseEffectsPage extends React.Component{
 
@@ -10,14 +11,12 @@ class AdverseEffectsPage extends React.Component{
         super(props, context);
     }
 
-    render(){
-        const adverseEffectsList = this.props.adverseEffects.map((ae) =>
-            <li key={ae.safetyReportId}>{ae.companyNumber}</li>            
-        );        
+    render(){       
+        const {adverseEffects} = this.props;         
         return (
             <div>
                 <h1>Adverse Effects</h1>    
-                <ul>{adverseEffectsList}</ul>
+                <AdverseEffectsList adverseEffects={adverseEffects} />
             </div>
         );
     }

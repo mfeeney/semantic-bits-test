@@ -10,6 +10,11 @@ class AdverseEffectsApi {
   static getAllAdverseEffects() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
+        let count = 0;
+        adverseEffects.map(ae => {
+          ae._id = count;
+          count++;
+        });
         resolve(Object.assign([], adverseEffects));
       }, delay);
     });

@@ -11,16 +11,17 @@
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
     "build:html": "babel-node tools/buildHtml.js",
-    "prebuild": "npm-run-all clean-dist test lint build:html", 
-    "build": "babel-node tools/build.js", 
-    "postbuild": "babel-node tools/distServer.js" 
+    "prebuild": "npm-run-all clean-dist test lint build:html",
+    "build": "babel-node tools/build.js",
+    "postbuild": "babel-node tools/distServer.js"
   },
-  "author": "Matthew Feeney",  
+  "author": "Matthew Feeney",
   "dependencies": {
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
     "cheerio": "^0.22.0",
     "jquery": "2.2.3",
+    "moment": "^2.17.1",
     "react": "15.0.2",
     "react-dom": "15.0.2",
     "react-redux": "4.4.5",
